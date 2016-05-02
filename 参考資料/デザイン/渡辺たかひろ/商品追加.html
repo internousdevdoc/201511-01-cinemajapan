@@ -1,0 +1,60 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>商品追加</title>
+</head>
+<body>
+<br></br>
+
+<font size="7"><div align="center"><span style="color:#1E90FF;">商品追加</span></div></font><br>
+<div align="center">
+
+<input type="button" ID="btnBrowse" STYLE="FONT;FONT-SIZE:15pt" onclick="location.href='購入履歴.html'"value="購入履歴">
+<input type="button" ID="btnBrowse" STYLE="FONT;FONT-SIZE:15pt" onclick="location.href='ユーザー一覧.html'"value="ユーザー一覧">
+<input type="button" ID="btnBrowse" STYLE="FONT;FONT-SIZE:15pt" onclick="location.href='商品削除.html'"value="商品削除">
+</br>
+<br>
+<div align="center"><TABLE border="1" bgcolor="lightyellow" width="60%" height="100"></div>
+
+<TR>
+<TD>タイトル</TD>
+<TD><textarea  name="setumei" cols="60" rows="2" maxlength="100" style="font-size:20px;" ></textarea>
+</TD>
+</TR>
+
+<TR>
+<TD>説明</TD>
+<TD><textarea  name="setumei" cols="60" rows="13" maxlength="1000" style="font-size:20px;" placeholder="＊ここに内容を書く"></textarea>
+</TD>
+
+<TR>
+<TD>値段</TD>
+<TD><textarea  name="setumei" cols="30" rows="1" maxlength="100" style="font-size:20px;" ></textarea>
+</TD>
+</TR>
+
+<TR>
+<TD>枚数</TD>
+<TD><textarea  name="setumei" cols="30" rows="1" maxlength="100" style="font-size:20px;" ></textarea>
+</TD>
+</TR>
+
+<TR>
+<TD>画像</TD>
+<TD></br>
+<IMG SRC="sample_200.jpg" ALT="sample" WIDTH="400" HEIGHT="186">
+<input type="file" ID="filUpload" STYLE="display:none" onChange="txtFilename.value = this.value;">
+
+<br>
+<input type="button" value="参照"ID="btnBrowse" STYLE="FONT;FONT-SIZE:10pt" onClick="filUpload.click()" >
+<input type="button" value="追加"ID="btnBrowse" STYLE="FONT;FONT-SIZE:10pt" onclick="追加">
+
+</br>
+</TD>
+</TR>
+</table>
+<input type="button" ID="btnBrowse" STYLE=";FONT-SIZE:15pt" onclick="location.href='submit"value="送信">
+<input type="button" ID="btnBrowse" STYLE=";FONT-SIZE:15pt" onclick="location.href='reset"value="リセット">
+
+</body>
+</html>

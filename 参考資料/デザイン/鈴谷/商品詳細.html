@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>商品詳細</title>
+<link rel="stylesheet" type="text/css" href="suzuya.css">
+
+</head>
+<body>
+
+<header>
+      <a href="main.html" style="color:#ffffff;text-decoration:none"><h1>CINEMA JAPAN</h1><br></a>
+      <p  class="headmenu">
+         <font color="#ffffff">山田　太郎 様</font>
+        <a href="top.html" style="color:#ffffff;text-decoration:none"><input type="submit" value="ログアウト"></a>
+        <input type="submit" value="マイページ">
+      </p>
+
+    </header>
+
+<div class="title">
+<h2 align="center">映画のタイトル</h2>
+</div>
+<div align="center">
+<img src="image.jpg" width="300px" height="180px">
+<p>
+<textarea  name="setumei" cols="50" rows="8" maxlength="500" disabled="disabled">この辺に説明を書く</textarea>
+<!--  placeholder="この辺に説明を書く" -->
+</p>
+</div>
+
+<form>
+<div class="syouhin">
+	<table align="center"width="250px">
+		<tr><th>-----------------</th></tr>
+		<tr><th>購入枚数</th></tr>
+		<tr><th align="left">大人:</th>
+			<td>
+			<select name="maisuu">
+			<option value="">---</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="2">3</option>
+			<option value="2">4</option>
+			<option value="2">5</option>
+			<option value="2">6</option>
+			</select>
+			</td>
+		<tr><th align="left">子供:</th>
+			<td>
+			<select name="maisuu">
+			<option value="">---</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="2">3</option>
+			<option value="2">4</option>
+			<option value="2">5</option>
+			<option value="2">6</option>
+			</select>
+			</td>
+			<td>
+		<tr><th>-----------------</th></tr>
+		<tr><th>支払い方法:</th></tr>
+
+			<tr><td align="left"><input type="radio" name="q1" value="カード">クレジットカード</td></tr>
+			<tr><td align="right">支払い回数:</td>
+				<td align="right">
+			<select name="shiharai">
+			<option value="">---</option>
+			<option value="ikkatu">一括払い</option>
+			<option value="bunkatu">分割</option>
+			</select>
+			</td></tr>
+		<tr><td align="left"><input type="radio" name="q1" value="銀行">銀行振り込み</td></tr>
+		<tr><td align="left"><input type="radio" name="q1" value="代引き">代金引換</td></tr>
+		<tr><th>-----------------</th></tr>
+	</table>
+</div>
+<div class="button" align="center">
+	<input type="button" name="subumit" value="完了" onclick="location.href='kakunin2.html'">
+	<input type="reset" name="reset" value="取消">
+	</div>
+</form>
+
+<div class="footer">
+      <small>Copyright © CINEMA JAPAN、all rights reserved.</small>
+	</div>
+
+</body>
+</html>

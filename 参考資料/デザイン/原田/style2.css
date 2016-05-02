@@ -1,0 +1,187 @@
+body{
+  font-family: 'メイリオ',
+  'Hiragino Kaku Gothic Pro', sans-serif;
+  background-image: linear-gradient(to top left, #A5A5A5, #BABAC2, #E8E8E8, #A5A5A5, #BABAC2);
+  margin: 5px;
+  height: 100%;
+}
+
+html, body{
+	margin: 0;	/* 余白の削除 */
+	padding: 0;	/* 余白の削除 */
+	height: 100%;	/* 縦の高さを100% */
+	width: 100%;	/* 横の幅を100% */
+}
+.contents {
+	position: relative;		/* フッター部の配置用に定義 */
+	min-height: 100%;		/* 縦の表示領域を100% */
+  width: 100%;
+
+}
+header{
+  background-image: linear-gradient(to top left, #101F1C, #143F38, #2B645B, #5D9F95, #1F514E);
+  color: #ffffff;
+  font-size: 2em;
+  width: 100%-5px;
+  height: 80px;
+  margin: auto;
+  padding: 40px 40px 0px 40px;
+
+}
+
+.list{
+  margin: 30px;
+}
+.list: after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.movie1{
+  float: right;
+  width: 25%;
+}
+.movie2{
+  float: right;
+  width: 25%;
+}
+.movie3{
+  float: right;
+  width: 25%;
+}
+.movie4{
+  float: right;
+  width: 25%;
+}
+
+.map{
+  margin: 30px;
+}
+
+img{
+  height: auto;
+  width: 80%;
+  padding: 10px;
+}
+
+
+.footer{
+    height:auto !important;
+    position: : absolute;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(to top left, #101F1C, #143F38, #2B645B, #5D9F95, #1F514E);
+    text-align: center;
+    height: 10px;
+
+}
+iframe{
+  width: 30%;
+}
+
+input{
+  margin: 5px;
+}
+
+h1{
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: auto;
+  float: left;
+
+}
+
+h2{
+  float: right;
+  font-size: 5px;
+}
+
+h3{
+  display: inline-block;
+  width: 20%;
+  padding: 5px 15px;
+  background-image: linear-gradient(to top left, #101F1C, #143F38, #2B645B, #5D9F95, #1F514E);
+  color: #ffffff;
+  font-size: 1em;
+}
+
+h4{
+  background-color: black;
+  color: white;
+  width: 5%;
+  padding: 10px 5px;
+  margin: 5px;
+  font-size: 5px;
+  float: right;
+}
+h5{
+  float: right;
+  font-size: 5px;
+  background-image: linear-gradient(to top left, #101F1C, #143F38, #2B645B, #5D9F95, #1F514E);
+  color: #ffffff;
+}
+h6{
+  margin: 0px;
+  float: right;s
+  font-size: 5px;
+}
+h7{
+  margin: 0px;
+  float: right;
+  font-size: 15px;
+}
+.big{
+font-size:50px;
+}
+.parchasehistory{
+border-collapse: collapse;
+width: 700px;
+height: 300px;
+margin-bottom:30px;
+}
+.parchasehistory th{
+	height: 30px;
+        width: 700px;       
+}
+.article{
+	align: "center";
+}
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css"
+rel="stylesheet">
+
+
+.follow ul	{margin:0;
+		padding:0;
+		list-style:none}
+
+.follow li a    {display:block;
+		margin-bottom: 10px;
+		padding: 10px;
+		border-radius: 4px;
+		color: #ffffff;
+		font-size: 14px;
+		text-decoration: none}
+
+.follow li a:hover	{opacity: 0.8}
+
+.follow-tw	{background-color: #63bafb}
+.follow-fb	{background-color: #5288f7}
+.follow-gp	{background-color: #f65d4a}
+
+.scr {
+  overflow: scroll;   /* スクロール表示 */ 
+  width: 800px;
+  height: 300px;
+  background-color: #FFFACD;
+}
+
+
+	
+
+
+.follow i	{margin-right: 10px;
+		font-size: 24px;
+		vertical-align: middle}
+
+.loginname	{margin-top:40px 0 0 0}

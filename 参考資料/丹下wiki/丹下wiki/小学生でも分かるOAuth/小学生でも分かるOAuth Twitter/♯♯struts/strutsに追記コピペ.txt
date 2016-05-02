@@ -1,0 +1,16 @@
+                <!-- Twitter認証を行うアクション -->
+	</action>
+		<action name="TwitterLogin" class="com.internousdev.JissenKadai4.action.GoTwitterAction"
+			method="execute">
+           <result name="success">login.jsp</result>
+           <result name="error">loginSuccess.jsp</result>
+       </action>
+
+		<!-- Twitter認証のコールバックアクション -->
+		<action name="LoginTwitterAction" class="com.internousdev.JissenKadai4.action.LoginTwitterAction"
+			method="execute">
+			<result name="success">/login.jsp</result>
+			<result name="error">loginSuccess.jsp</result>
+                </action>
+
+		<!-- ここまでTwitter認証関係 -->

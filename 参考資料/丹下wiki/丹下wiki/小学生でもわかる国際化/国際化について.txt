@@ -1,0 +1,71 @@
+①対象となるプロジェクトを立ち上げます。
+
+②WebContentの中のWEB-INFのlibの中にjarファイルを追加
+・jstl.jar
+・standard.jar
+
+③jstlの宣言
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>　
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+この2文を対象となるJSPファイルに宣言します。
+
+※必ず<!DOCTYPE HTML>タグの上に表記し、宣言してください。
+
+※クライアント（そのWEBページに訪れる人）のロケールを取得します。
+ロケールの説明は下記に記載しておりますが、ザックリいうと
+クライアントPCがある国のことです。
+（日本のパソコンとか、アメリカのパソコンとかlocalhostのこと）
+
+④<fmt:setLocale value="${pageContext.request.locale.language}" />
+この一文を対象となる（国際化したい）jspファイルのheadタグ内に記入します。
+
+⑤表示させたい言語ごとにプロパティファイルを作成します。
+【手順】
+Ⅰ:プロジェクトのsrc内に新たにパッケージを作成。
+例：com.internousdev.プロジェクト名.propertiesにて作成
+
+Ⅱ:パッケージ内に言語別のpropertiesファイルを作成。
+（日本なら日本語、アメリカなら英語、中国なら中国語、言語毎にファイルを作成）
+
+右クリック→新規→ファイルより作成。
+ファイル名の作成例:Actionクラス名_言語名.properties
+【言語名サンプル】
+日本語　jp
+英語　  en
+　
+⑥国際化させたいjspファイルにどこからのproperties（何処の国の言語に変換するか）
+を呼び出しているのかの定義を行う
+<fmt:setBundle basename="com.internousdev.プロジェクト名.properties.Actionクラス名" var="lang" />
+↑をheadタグ内に記載します。
+
+⑦国際化させたい文字の部分を↓に変更します。
+<fmt:message key="○○○" ←任意のKeyを指定します。 bundle="${lang}" />:
+記号:Keyとは国際化する為に使用する各言語のpropertiesファイル内に記載する文字を呼び出す文字になります。
+ 　
+⑧【⑤】にて作成したpropertiesファイル内に、呼び出したい文字を書き込みます。
+keyに勝手に変換されます。
+↓
+例:
+id = ID　　　　　　　　　　　               この場合keyはidであり、表記する言語はIDになります。
+password = PASSWORD　　　　　               この場合keyはpasswordであり、表記する言語はPASSWORDになります。
+↑enのpropertiesファイル内の表記
+
+id = \u611B\u30C7\u30A3                     この場合keyはidであり、表記する言語は\u611B\u30C7\u30A3になります。
+password = \u3071\u3059\u308F\u30FC\u3069   この場合keyはpasswordであり、表記する言語は\u3071\u3059\u308F\u30FC\u3069になります。
+↑ja0のpropertiesファイル内の表記
+※"="以下を全角入力で日本語を入力すると自動的に
+\u3071\u3059\u308F\u30FC\u3069のように表記されます。
+
+プログラムを実行し設定しているロケールの言語で文字の表記ができれば完成です。
+※ブラウザ上の設定でロケールの変更が可能です。
+
+以上です。
+
+
+
+※ロケールとは、ソフトウェアに内蔵される、言語や国・地域ごとに異なる
+単位、記号、日付、通貨などの表記規則の集合。または単に、利用する言語や
+国・地域の指定。多くのソフトウェアやプログラミング言語は、使用する言語
+とともにロケールを設定し、ロケールで定められた方式に基づいてデータの表記や処理を行う。
+
+

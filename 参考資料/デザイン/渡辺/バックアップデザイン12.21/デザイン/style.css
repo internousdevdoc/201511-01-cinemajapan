@@ -1,0 +1,421 @@
+﻿*{
+  margin:0;
+}
+
+body{
+  font-family: 'メイリオ';
+  margin: 0;
+  width: 100%;
+}
+
+
+/*header*/
+.header{
+  background-image: url(img11.gif);
+  height: 200px;
+}
+
+/*header*/
+.header_title{
+  padding: 0px 20px 0px 20px;
+  font-family: "HG丸ｺﾞｼｯｸM-PRO";
+  height: 50px;
+}
+
+/*header*/
+.header input[type="header"]{
+  padding: 5px;
+  border-radius: 5px;
+
+}
+
+/*header*/
+.header_right{
+  float: right;
+  padding: 0 10px 0 10px;
+  color: #ffffff;
+}
+
+/*header*/
+.follow{
+  padding: 0;
+  margin: 0;
+  height: 30px;
+}
+
+/*header*/
+.follow li{
+  display: inline;
+}
+
+/*header*/
+.follow ul{
+  margin:0;
+  padding:0;
+  list-style:none
+}
+
+/*header*/
+.follow li a{
+  display:block;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none
+}
+
+/*header*/
+.follow li a:hover{
+  opacity: 0.8
+}
+
+/*header*/
+.follow-tw{
+  background-color: #63bafb;
+  width: 30px;
+  float: right;
+  margin: 0 5px;
+}
+
+/*header*/
+.follow-fb{
+  background-color: #5288f7;
+  width: 30px;
+  float: right;
+  margin: 0 5px;
+}
+
+/*header*/
+.follow-gp{
+  background-color: #f65d4a;
+  width: 30px;
+  float: right;
+  margin: 0 5px;
+}
+
+/*header*/
+.header_button{
+  background-image: url(img01.gif);
+  font-weight: bold;
+  width: 75px;
+  float: right;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/*header*/
+.header_button i{
+  margin: 5px;
+}
+
+/*header*/
+.header_icon{
+  color: #A8002F;
+  margin: auto;
+  padding: 0;
+  font-size: 18px;
+  font-family: "HG丸ｺﾞｼｯｸM-PRO";
+}
+
+/*header_login*/
+.header_login{
+  background-image: url(img11.gif);
+  height: 200px;
+}
+
+/*header_login*/
+.header_login h1{
+  color: #ffffff;
+  padding: 20px 20px 0px 20px;
+  font-family: "HG丸ｺﾞｼｯｸM-PRO";
+}
+
+/*header_login*/
+.menu{
+  float: right;
+  margin-top: 100px;
+  margin-right: 20px;
+}
+
+/*header_login*/
+.menu li a{
+  color: #ffffff;
+  font-size: 20px;
+}
+
+/*header_login*/
+.cart_icon{
+  float: right;
+  width: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/*header_login*/
+.header_login nav ul{
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+
+}
+
+/*header_login*/
+.header_login nav li{
+  display: inline;
+  font-size: 20px;
+  border-left: solid 2px #A8002F;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/*footer*/
+.footer{
+  background-image: url(img11.gif);
+  position:fixed;  /*フッターを絶対配置に指定する設定*/
+  /*position:absolute;*/
+  bottom:0px;
+  height: 66.6px;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+}
+
+/*footer*/
+.footer nav ul{
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/*footer*/
+.footer nav li{
+  display: inline;
+  border-right: solid 2px #A8002F;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/*footer*/
+.footer nav li:first-child{
+  border-left: solid 2px #A8002F;
+}
+
+.login{
+  width:400px;
+  margin:0 auto;
+  margin-top:8px;
+  margin-bottom:2%;
+  transition:opacity 1s;
+  -webkit-transition:opacity 1s;
+}
+
+.login h1{
+  background:#3399cc;
+  padding:20px 0;
+  /*font-size:140%;管理者ログインの文字を大きくする*/
+  font-weight:300;
+  text-align:center;
+  color:#fff;
+}
+
+.login form{
+  background:#f0f0f0;
+  padding:6% 4%;
+}
+
+.adminlogin1 input[type="email"], .adminlogin1 input[type="password"]{
+  width:92%;
+  background:#fff;
+  margin-bottom:4%;
+  border:1px solid #ccc;
+  padding:4%;
+  font-family:'Open Sans',sans-serif;
+  font-size:95%;
+  color:#555;
+}
+
+.adminlogin2 input[type="submit"]{
+  width:100%;
+  background:#3399cc;
+  border:0;
+  padding:4%;/*ログインの枠大きく*/
+  font-family:'Open Sans',sans-serif;
+  font-size:100%;
+  color:#fff;
+  cursor:pointer;
+
+
+.adminlogin2 input[type="submit"]:hover{
+  background:#2288bb;
+}
+
+/*
+cart
+カート内ユーザー情報テーブル*/
+.userinf{
+	border-collapse: collapse;
+	margin-left:550px;
+
+}
+
+/*
+cart
+カート内商品一覧ボタン*/
+.syouhinbutton{
+	margin-left:750px;
+}
+
+/*
+cart
+カート内文字列１*/
+.cartmozi1{
+	margin-left:625px;
+}
+
+/*
+cart
+カート内文字列２*/
+.cartmozi2{
+	margin-left:590px;
+}
+
+/*
+cart
+カート内文字列３*/
+.cartmozi3{
+	margin-left:100px;
+}
+
+/*
+cart
+カート内文字列４*/
+.cartmozi4{
+	margin-left:115px;
+}
+
+/*
+cart
+カート内文字列５*/
+.cartmozi5{
+	margin-left:115px;
+}
+
+/*
+cart
+合計*/
+.goukei{
+	margin-left:1000px;
+}
+
+/*
+cart
+カート内文字列６*/
+.cartmozi6{
+	margin-left:580px;
+	color:red;
+}
+
+/*
+cart
+現金支払いボタン*/
+.kounyuuendbutton{
+	margin-left:748px
+}
+
+/*
+cart
+クレジット支払いボタン*/
+.kurezittobutton{
+	margin-left:735px;
+}
+
+/*
+cart
+カートを空にするボタン*/
+.cartdeletebutton{
+	margin-left:735px;
+}
+
+/*エラー画面*/
+.error{
+  font-size: 80px;
+  text-align: center;
+}
+.error2{
+  font-size: 30px;
+  text-align: center;
+}
+
+.question{
+  margin-left: auto;
+  margin-left: auto;
+}
+
+.question_contents{
+  margin-bottom: 10px;
+}
+
+/*
+お問い合わせ*/
+.question_title{
+  text-align: center;
+}
+
+.question_contents input[type="text"]{
+  width: 200px;
+  height: 100px;
+}
+
+/*
+退会画面*/
+.unregister_p{
+font-size: 60px;
+}
+
+
+/*管理者1*/
+.admin{font-size:60px;
+ text-align: center;}
+
+/*管理者2*/
+.admin2{font-size:30px;
+ text-align: center;}
+
+/*管理者3*/
+ .admin3{font-size:30px;
+ text-align: center;}
+
+/*管理者4*/
+.admin4{
+margin-left:auto;margin-right:auto;
+width: 50%;
+border-collapse: collapse;
+}
+.admin4 th{
+width: 25%;
+padding: 6px;
+text-align: left;
+vertical-align: top;
+color: #333;
+background-color: #ccccff;
+border: 1px solid #b9b9b9;
+}
+.admin4 td{
+padding: 6px;
+background-color: #ffffff;
+border: 1px solid #b9b9b9;
+}
+/*管理者5*/
+.admin5{text-align:center;
+}
+/*管理者6*/
+.admin5{text-align:center;
+}

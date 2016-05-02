@@ -1,0 +1,78 @@
+MongoDBインストールの概要----------------------------------------------
+
+MongoDBを使用するにはMySQLと同じように、MongoDBをインストール
+し、環境変数を設定してから、コマンドプロンプト上で起動します。
+
+
+
+MongoDBの環境構築手順---------------------------------------------
+
+① MongoDBをダウンロードする
+https://www.mongodb.org/downloads#production
+Download MongoDB
+VERSIONが一番上のwindows 64-bit 2008 R2+を選択
+BINARYの緑のダウンロードボタンを押すDOWNLOAD(msi)
+
+②インストールする
+mongodb-win32-x86_64-2008plus-ssl-3.0.7-signed.msi
+を実行する
+インストーラーが起動する
+Next→I accept the terms in the License Agreementにチェックを入れる
+Completeをクリック
+Installをクリック→インストールが終わったらFinishをクリック
+
+③binにPathを設定する
+cのProgram FilesにMongoDBというフォルダができている
+MongoDB>Server>3.0>binを開いていく
+アドレスバーの右空白をクリックしてアドレスバーの
+C:\Program Files\MongoDB\Server\3.0\binをコピーする
+
+コンピュータ＞システムのプロパティ＞システムの詳細設定＞環境変数
+PathにコピーしたC:\Program Files\MongoDB\Server\3.0\binを追記
+(セミコロン;を先頭につけるのを忘れないこと)
+
+コマンドプロンプトを立ち上げ
+cd C:\Program Files\MongoDB\Server\3.0\bin
+と入力する
+その後
+mongo --version
+と入力する
+うまくいけば
+MongoDB shell version:3.0.7と表示される
+正常にインストールされている
+
+
+④ローカルディスクC:直下にフォルダを作成する
+コマンドプロンプトを立ち上げて
+mkdir C:\mongodb\data C:\mongodb\logs
+と、入力して実行
+(処理内容　C:直下にmondodbというフォルダを作成してその中にさらに
+dataとlogsというフォルダを作っている)
+うまくいけばローカルディスクCの中にmongodbというフォルダができていて
+その中にdata logsの2つァイルができている
+
+⑥ mongodbを起動
+コマンドプロンプト上で↓
+mongod --dbpath c:\mongodb\data --logpath c:\mongodb\logs\mongodb.log
+と入力する
+うまくいくと何も表示されずそこでとまる
+
+⑦mongodbを起動(2枚目)
+今のコマンドプロンプトをそのまま残したまま、
+新規でコマンドプロンプトを起動する
+mongo
+と入力する
+うまくいけばconnecting to: testと最後の行に表示される
+dbと入力してエンター押す
+testと表示されれば正常に接続できています
+
+これでMongoDBの環境構築は完了です
+以後、接続する際は⑥，⑦の手順からスタートします
+
+------------------------------------------------------------
+この部分はまだ完成していません
+⑦ 別のコマンドプロンプトからmongoシェルを扱う
+
+http://qiita.com/yoh-nak/items/f0c429f10347ae7ec98b
+
+http://www.atmarkit.co.jp/ait/articles/1507/14/news

@@ -1,0 +1,20 @@
+struts.xml
+<constant name="struts.custom.i18n.resources" value="プロパティ名,プロパティ名,・・" />
+
+struts.xmlと同じ階層にpropertiesファイルを作る（新規→その他→一般→ファイル）
+※プロパティ名_言語コード.propertiesと作る。言語コードがないと読まない。(英語en、日本語ja)
+
+jsp側表示
+表示するだけ
+<s:text name="プロパティで指定したkey名" />
+
+ボタンの時↓
+sタグ等タグの中の表示
+<s:submit value="%{getText('プロパティで指定したkey名')}" />
+
+java側表示
+(getText("プロパティで指定したkey名"));
+    ※getTextはActionSupportを継承していること。
+
+ヴァリデーション等のxmlファイル
+%{getText('プロパティで指定したkey名')}

@@ -1,0 +1,198 @@
+
+1.DB操作
+DB作成
+　　use dbname;  (dbnameは自由に記述可)
+　　(use dbname;でDBが無い場合は作成、既存の場合は切り替えを行う)
+
+DB削除
+　　db.dropDatabase();
+
+DB一覧
+　　show dbs;
+
+2.コレクション操作
+コレクション一覧
+　　show collections;
+
+コレクション作成
+　　db.createCollection("COL");  (COLは自由に記述可※ここではコレクション名をCOLで使用)
+
+コレクションの削除
+　　db.COL.drop();  (COLというcollectionを削除)
+
+3.ドキュメント操作
+コレクションにドキュメントを追加
+　　db.COL.insert({name:"nohara",text:"test"});
+
+コレクションのドキュメントの更新
+
+MongoDBは、multiフラグを指定しなければ最初にマッチしたドキュメントだけしか更新されない。
+以下はname が "nohara"のドキュメントの プロパティに対して操作を行うとき
+
+"money" のプロパティを更新
+　　db.COL.update( { name:"nohara" }, { $set:{ money: 9999999 } } );
+　　
+"money" のプロパティを削除
+　　db.COL.update( { name:"nohara" }, { $unset:{ money: "" } } );
+　　
+"money" のプロパティに10を加算
+　　db.COL.update( { name:"nohara" }, { $inc:{ money: 10 } } );
+　　
+"money" のプロパティに10を減算
+　　db.COL.update( { name:"nohara" }, { $inc:{ money: -10 } } );
+　　
+"money" のプロパティ名を "mymoney" に変更
+　　db.COL.update( { name:"nohara" }, { $rename:{ money: "mymoney" } } );
+注意
+
+下記のやり方だとドキュメントが{ money: 9999999 }になってしまう！
+db.COL.update( { name:"nohara" }, { money: 9999999 } );
+
+複数のドキュメントを一律更新する
+MongoDBは、multiフラグを指定しなければ最初にマッチしたものしか更新されない
+
+　　db.COL.update( { name: /nohara/ }, { $set:{ money: 1000000 } }, { multi:true } );
+
+コレクション内のドキュメント全件削除
+　　db.COL.remove();
+
+特定の値を持っているものだけを削除
+　　db.COL.remove({name:"nohara"});
+　　  ※こちらはupdateと違ってmultiフラグを指定しなくても、該当するドキュメントが全部削除される
+
+コレクション内のドキュメント取得
+
+全件取得
+　　db.COL.find();
+
+コレクションの特定のドキュメントを取得
+　　db.COL.find({name:"nohara"});
+
+その他の条件指定
+
+money > 30
+　　db.COL.find( { money: { $gt: 30 } } );
+
+money >= 30
+　　db.COL.find( { money: { $gte: 30 } } );
+
+money < 30
+　　db.COL.find( { money: { $lt: 30 } } );
+
+money <= 30
+　　db.COL.find( { money: { $lte: 30 } } );
+
+money != "nohara"
+　　db.COL.find( { money: { $ne: "nohara" } } );
+
+name が "nohara" or "hara" のものを抽出
+　　db.COL.find( { name: { $in: ["nohara","hara"] } } );
+
+
+複数条件
+
+AND
+
+2通りある
+以下は name が "nohara" で、money が 1000000 以上のものを取得
+
+find にそのまま複数指定
+　　db.COL.find({
+ 　　 name  : "nohara",
+ 　　 money : { $gt : 1000000  }
+　　});
+
+And(演算子）
+　　db.COL.find({
+  　　$and: [
+   　　 { name  : "nohara" },
+   　　 { money : { $gt : 1000000  } }
+ 　　 ]
+　　});
+
+OR
+
+以下は name が "nohara"か"hara" で、money が 1000000 以上のものを取得
+or(演算子）
+
+　　db.COL.find({
+  　　$or: [
+   　　 { name: { $in: ["nohara","hara"] } },
+   　　 { money : { $gt : 1000000  } }
+  　　]
+　　});
+
+
+
+取得するプロパティを指定
+
+なにも指定しなければ、ドキュメントの値が全て取得できてしまう。
+'_id'とか不要なことも多いと思うので、不要なデータを受け取らずにするにはこの項目の方法を参照
+
+　　db.COL.find( { name: { $in: ["nohara","hara"] } }, { name:1 } );
+1と0で表示非表示。ただし、1と0を混在させることはできない。
+
+NG パターン;
+　　db.COL.find( { name: { $in: ["nohara","hara"] } }, { name:1,money:0 } );
+
+OK パターン;
+　　db.COL.find( { name: { $in: ["nohara","hara"] } }, { name:1, _id:0 } );
+　　　(※IDだけは例外で許容される仕様)
+
+
+
+
+取得する件数の指定
+
+ドキュメントを最初の一件だけ取得する場合
+
+fineOneを使う
+　　db.COL.findOne( { name: { $in: ["nohara","hara"] } }, { name:1, _id:0 } );
+
+ドキュメントを3件だけ取得する場合
+
+limitを使う
+　　db.COL.find( { name: "nohara" } ).limit(3);
+指定したドキュメントからlimitで指定された分のドキュメントを取得
+
+2件飛ばした位置から3件取得
+　　db.COL.find( { name: "nohara" } ).skip(2).limit(3);
+
+
+ソートの指定
+
+ 昇順: -1
+ 降順:1
+
+　　db.COL.find().sort( { money:-1 } );
+
+ドキュメントの件数を取得
+
+db.COL.count();
+
+ 重複レコードの除去（distinct)
+ nameのプロパティで重複しているもの以外の値を重複データを除いて取得
+
+　　db.COL.distinct( "name" );
+
+インデックス
+
+ 昇順: -1
+ 降順:1
+
+一覧
+　　db.COL.getIndexes();
+
+追加
+　　db.COL.ensureIndex( { name : 1 } );
+
+削除
+　　db.COL.dropIndex( { name : 1 } );
+
+
+
+
+
+
+
+

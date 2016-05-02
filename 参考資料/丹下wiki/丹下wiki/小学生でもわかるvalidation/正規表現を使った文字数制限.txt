@@ -1,0 +1,66 @@
+基本入力は他ファイルを参照
+
+
+　　<validator type="regex">
+	<param name="fieldName">id</param>
+	<param name="regex"><![CDATA[([0-9a-z]{8,16})]]></param>
+	<message>IDは半角英数小文字8~16桁で入力してください</message>
+　　</validator>
+
+
+解説(フィールドの書き方に違和感を覚えたら下のソースに関しても参照！)
+1行目：<validator type="regex">
+・「regex」は正規表現によるチェック
+
+2行目：<param name="fieldName">id</param>
+・チェックするフィールドの場所（id）を指定
+
+3行目：<param name="regex"><![CDATA[([0-9a-z]{8,16})]]></param>
+・チェックする正規表現を記述
+・[0-9a-z]→半角の数字と半角の小文字英文字に入力を制限
+　※たとえば全角大文字も入力OKの場合は[0-9a-zA-Z０-９ａ-ｚＡ-Ｚ]
+・{8,16}　→文字数を制限。左が最少数、右が最大数
+
+4行目：<message>IDは半角英数小文字8~16桁で入力してください</message>
+・チェックに引っかかった場合表示される文字
+
+
+
+
+ソースの書き方が2種類あるようで、
+1つのフィールドに対してチェックが1つの場合は上記でいいと思います。
+複数のチェックある場合は先にフィールドを指定してあげると便利です。
+
+　　<field name="id">
+    　　<field-validator type="regex">
+	　　<param name="regex"><![CDATA[([0-9a-z]{8,16})]]></param>
+	　　<message>IDは半角英数小文字8~16桁で入力してください</message>
+    　　</field-validator>
+　　</field>
+
+
+こんな感じで先にフィールドを書きます（</field>も忘れずにね！）
+<validator type="regex">→<field-validator type="regex">
+ここもこんな感じで変わります。
+
+
+　　<field name="id">
+    　　<field-validator type="regex">
+	　　<param name="regex"><![CDATA[([0-9a-z]{8,16})]]></param>
+	　　<message>IDは半角英数小文字8~16桁で入力してください</message>
+　　　　</field-validator>
+
+　　　　<field-validator type="requiredstring">
+	　　<message>IDを入力してください</message>
+    　　</field-validator>
+　　</field>
+
+
+
+「requiredstring」は入力がカラの場合のチェックです。
+これで文字数、種類の制限とカラの場合をはじけるようになっています。
+
+
+
+
+修正箇所がありましたら、直しておいてください！

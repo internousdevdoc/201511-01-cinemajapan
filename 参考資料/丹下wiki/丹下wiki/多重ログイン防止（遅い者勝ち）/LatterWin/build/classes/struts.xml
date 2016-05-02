@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+  <constant name="struts.devMode" value="true"/>
+  <constant name="struts.ui.theme" value="bootstrap"/>
+
+  <package name="latterwin" namespace="/" extends="struts-default">
+    <interceptors>
+      <interceptor name="latterWin" class="com.internousdev.latterwin.interceptor.LatterWinInterceptor"/>
+      <interceptor-stack name="defaultLatterWinStack">
+        <interceptor-ref name="defaultStack"/>
+        <interceptor-ref name="latterWin"/>
+        <!-- スタックの積み方これであってるか不明 -->
+        <!-- どこでもよさそうな気はする-->
+      </interceptor-stack>
+    </interceptors>
+
+
+    <action name="login" class="com.internousdev.latterwin.action.LoginPageAction" method="execute">
+      <result name="success">/WEB-INF/content/login.jsp</result>
+      <result name="redirect" type="redirectAction">content</result>
+    </action>
+
+    <action name="login_process" class="com.internousdev.latterwin.action.LoginAction" method="execute">
+      <result name="success" type="redirectAction">content</result>
+      <result name="input">/WEB-INF/content/login.jsp</result>
+      <result name="error" type="redirectAction">login</result>
+    </action>
+
+    <action name="content" class="com.internousdev.latterwin.action.ContentPageAction" method="execute">
+      <interceptor-ref name="defaultLatterWinStack"/>
+      <result name="success">/WEB-INF/content/content.jsp</result>
+      <result name="error" type="redirectAction">login</result>
+    </action>
+
+  </package>
+
+</struts>

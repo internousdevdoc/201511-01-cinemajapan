@@ -1,0 +1,136 @@
+﻿body{
+  font-family: '繝｡繧､繝ｪ繧ｪ',
+  'Hiragino Kaku Gothic Pro', sans-serif;
+  background-image: linear-gradient(to top left, #A5A5A5, #BABAC2, #E8E8E8, #A5A5A5, #BABAC2);
+  margin: 5px;
+  height: 100%;
+}
+
+html, body{
+	margin: 0;	/* 菴咏區縺ｮ蜑企勁 */
+	padding: 0;	/* 菴咏區縺ｮ蜑企勁 */
+	/* height: 100%;邵ｦ縺ｮ鬮倥＆繧�100% */
+	width: 100%;	/* 讓ｪ縺ｮ蟷�繧�100% */
+}
+.contents {
+	position: relative;		/* 繝輔ャ繧ｿ繝ｼ驛ｨ縺ｮ驟咲ｽｮ逕ｨ縺ｫ螳夂ｾｩ */
+	min-height: 100%;		/* 邵ｦ縺ｮ陦ｨ遉ｺ鬆伜沺繧�100% */
+  width: 100%;
+
+}
+header{
+  background-image: linear-gradient(to top left, #101F1C, #143F38, #2B645B, #5D9F95, #1F514E);
+  color: #ffffff;
+  font-size: 4.5em;
+  width: 100%;
+  height: 10%;
+  margin: auto;
+  padding: 40px 0px 0px 0px;
+
+}
+
+img{
+  height: auto;
+  width: 20%;
+}
+
+.footer{
+    height:auto !important;
+    position: : absolute;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(to top left, #101F1C, #143F38, #2B645B, #5D9F95, #1F514E);
+    text-align: center;
+    height: 10px;
+    margin-top:50px;
+
+}
+iframe{
+  height: auto;
+  width: 30%;
+}
+
+input{
+  margin: 5px;
+}
+
+h1{
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: auto;
+  float: left;
+　padding-left: 40px;
+  margin-left: 40px;
+
+}
+
+
+
+h3{
+  display: inline-block;
+  width: 20%;
+  padding: 5px 15px;
+  background-image: linear-gradient(to top left, #101F1C, #143F38, #2B645B, #5D9F95, #1F514E);
+  color: #ffffff;
+  font-size: 1em;
+}
+
+h4{
+  background-color: black;
+  color: white;
+  width: 5%;
+  padding: 10px 5px;
+  margin: 5px;
+  font-size: 5px;
+  float: right;
+}
+h5{
+  float: right;
+  font-size: 5px;
+  background-image: linear-gradient(to top left, #101F1C, #143F38, #2B645B, #5D9F95, #1F514E);
+  color: #ffffff;
+}
+h6{
+  margin: 0px;
+  float: right;
+  font-size: 5px;
+}
+
+
+.title{
+	font-size:30px;
+	margin-top:40px;
+	margin-bottom:30px;
+
+}
+.table th{
+	height:35px;
+	font-size:20px;
+}
+.table td{
+	height:35px;
+	font-size:20px;
+}
+.headmenu{
+  margin: 0px;
+  float: right;
+  font-size: 15px;
+  position:relative; bottom:30px; right:10px;
+}
+.table span{
+	color:red;
+	font-size: 15px;
+}
+.table table{
+	background-color:#fff;
+}
+.button input{
+	color:#000;
+	margin-top:30px;
+	width:100px;
+	height:30px;
+}
+.syouhin{
+
+}

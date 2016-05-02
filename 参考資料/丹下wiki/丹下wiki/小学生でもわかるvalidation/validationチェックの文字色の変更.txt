@@ -1,0 +1,17 @@
+validationチェック時に表示される文字色の変更
+
+その文字を表示させたいページのjspファイル(例えばlogin.jspなど)の
+ヘッダー内に以下のようにソースをうちます。
+
+
+
+<style type="text/css">
+<!--
+.errorMessage {
+	color: red;
+}
+-->
+</style>
+
+
+「red」の部分が色の指定になります。

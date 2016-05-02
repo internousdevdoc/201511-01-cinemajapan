@@ -1,0 +1,357 @@
+﻿body{
+  font-family: 'メイリオ',
+  'Hiragino Kaku Gothic Pro', sans-serif;
+  background-image: linear-gradient(to top left, #A5A5A5, #BABAC2, #E8E8E8, #A5A5A5, #BABAC2);
+  margin: 5px;
+}
+
+html, body{
+	margin: 0;	/* 余白の削除 */
+	padding: 0;	/* 余白の削除 */
+	width: 100%;	/* 横の幅を100% */
+}
+header{
+  background-image: linear-gradient(to top left, #101F1C, #143F38, #2B645B, #5D9F95, #1F514E);
+  color: #ffffff;
+  font-size: 2em;
+  width: 100%-5px;
+  height: 80px;
+  margin: auto;
+  padding: 40px 40px 0px 40px;
+
+}
+.box_top: after{
+  content: "";
+  display: block;
+  clear: both;
+  height: auto;
+}
+
+.box_top{
+  margin: 0;
+  padding: 0;
+}
+.box_main: after{
+  content: "";
+  display: block;
+  clear: both;
+  height: auto;
+}
+
+.box_main{
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+
+.contents{
+	position: relative;		/* フッター部の配置用に定義 */
+  padding: 0px;
+  margin: 0;
+}
+sideber{
+  position: relative;		/* フッター部の配置用に定義 */
+  width: 25%;
+  margin: 0;
+  padding: 0;
+}
+
+.list{
+  margin: 15px;
+  width: 70%;
+  float: left;
+}
+
+.movie{
+  height: auto;
+  width: 90%;
+  padding: 0px;
+}
+
+.movie1{
+  float: left;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+.movie2{
+  float: left;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+.movie3{
+  float: left;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+.movie4{
+  float: left;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+.movie5{
+  float: right;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+.movie6{
+  float: right;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+.movie7{
+  float: right;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+.movie8{
+  float: right;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+.movie9{
+  float: left;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+.movie10{
+  float: left;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+.movie11{
+  float: left;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+.movie12{
+  float: left;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+.movie13{
+  float: right;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+.movie14{
+  float: right;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+.movie15{
+  float: right;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+.movie16{
+  float: right;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+.movie17{
+  float: left;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+.movie18{
+  float: left;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+.movie19{
+  float: left;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+.movie20{
+  float: left;
+  width: 25%;
+  margin: 0;
+  font-size: 3px;
+}
+
+.comment{
+  background-color: #ffffff;
+  width: 90%;
+  margin: 0px;
+  border: solid 1px #aaaaaa;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -web-kit-box-shadow: 1px 1px 3px #aaaaaa;
+  box-shadow: 1px 1px 3px #aaaaaa;
+  border-radius: 20px;
+}
+
+
+footer{
+    height:auto !important;
+    position: : absolute;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(to top left, #101F1C, #143F38, #2B645B, #5D9F95, #1F514E);
+    text-align: center;
+    height: 10px;
+
+}
+iframe{
+  width: 20%;
+  display: inline-block;
+  width: 20%;
+  padding: 5px 15px;
+}
+
+input{
+  margin: 5px;
+}
+
+h1{
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: auto;
+  float: left;
+
+}
+
+h2{
+  float: right;
+  font-size: 5px;
+}
+
+h3{
+  display: inline-block;
+  width: 20%;
+  padding: 5px 15px;
+  background-image: linear-gradient(to top left, #101F1C, #143F38, #2B645B, #5D9F95, #1F514E);
+  color: #ffffff;
+  font-size: 1em;
+}
+
+h4{
+  background-color: black;
+  color: white;
+  width: 5%;
+  padding: 10px 5px;
+  margin: 5px;
+  font-size: 5px;
+  float: right;
+}
+h5{
+  float: right;
+  font-size: 5px;
+  background-image: linear-gradient(to top left, #101F1C, #143F38, #2B645B, #5D9F95, #1F514E);
+  color: #ffffff;
+}
+h6{
+  margin: 0px;
+  float: right;
+  font-size: 5px;
+}
+h7{
+  margin: 0px;
+  float: right;
+  font-size: 15px;
+}
+h8{
+  background-image: linear-gradient(to top left, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03);
+  width: 90%;
+  margin: 5px;
+  border: solid 1px #aaaaaa;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -web-kit-box-shadow: 1px 1px 3px #aaaaaa;
+  box-shadow: 1px 1px 3px #aaaaaa;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+
+
+
+.search {
+    padding:6px 15px 6px 30px;
+    margin:3px;
+    background: url('./images/search.png') no-repeat 8px 6px;
+}
+.rounded {
+    border-radius:15px;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
+}
+input[type=text]{
+    color:black;
+}
+
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css"
+rel="stylesheet">
+
+
+.follow ul	{margin:0;
+		padding:0;
+		list-style:none}
+
+.follow li a    {display:block;
+		margin-bottom: 10px;
+		padding: 10px;
+		border-radius: 4px;
+		color: #ffffff;
+		font-size: 14px;
+		text-decoration: none}
+
+.follow li a:hover	{opacity: 0.8}
+
+.follow-tw{
+  background-color: #63bafb;
+  width: 30px;
+  float: right;
+  margin: 5px;
+}
+.follow-fb{
+  background-color: #5288f7;
+  width: 30px;
+  float: right;
+  margin: 5px;
+}
+.follow-gp{
+  background-color: #f65d4a;
+  width: 30px;
+  float: right;
+  margin: 5px;
+}
+
+
+.follow i	{margin-right: 10px;
+		font-size: 24px;
+		vertical-align: middle}
+
+.follow{
+  padding: 0;
+  margin: 0;
+  height: 30px;
+}
+.style{
+  margin: 0;
+}

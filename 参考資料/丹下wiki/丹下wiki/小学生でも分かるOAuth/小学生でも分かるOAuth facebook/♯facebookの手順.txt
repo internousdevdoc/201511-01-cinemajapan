@@ -1,0 +1,182 @@
+★Facebookに認証させます
+↓
+https://ja-jp.facebook.com/login/
+
+インターノウスのメールアドレスになります↓
+ID internous.dev@gmail.com
+PASS internous01
+を使って、ログイン。
+
+以下、手順になります。
+↓
+電話番号を追加→後で
+(もしポップアップが出れば)
+↓
+画面一番右下のその他をクリック
+↓
+開発者をクリック
+↓
+画面上のタブのMy　Appsをクリック
+↓
+画面右側のAdd a New Appをクリック
+↓
+ウェブサイトをクリック
+↓
+画面右上のSkip and Create Aoo IDをクリック
+↓
+Display Name
+例）internous.10.bにしました
+↓
+Namespace
+はスルーで大丈夫です
+↓
+カテゴリを選択(なんでもいいです)
+↓
+Create App ID
+↓
+セキュリティーチェックを通過してください
+（指定された絵を全て選ぶ）
+↓
+画面左のタブの設定（Setteings）をクリック
+↓
+App IDとApp Secret(右ボタンのshowをクリック)
+の2つのキーをメモする
+↓
+Basicのタブをクリック
+↓
+App ID  ↓ここはひとそれぞれ違います
+537629493054879
+↓
+表示（Show）
+↓
+App Secret→表示（Show）  ↓ここはひとそれぞれ違います メモしておく
+8663d0757027170aa79df504ccafdd67
+↓
+Advancedのタブをクリック  
+Client Token    ↓ここはひとそれぞれ違います  メモしておく
+50add4e225aafa35275a68b405db7d07
+↓
+Basicのタブをクリック
+↓
+App Domainsをクリック
+↓
+localhostと入力して、すぐ下に表示されている、青い文字をクリック
+(注意、ゆっくりと入力)
+↓
+＋Add Platformをクリック
+↓
+Websiteをクリック
+↓
+サイトURLに
+↓
+http://localhost:8080/JissenKadai4/
+★激注意（フェイスブックをクリックして、戻ってくるページ　）
+入力して、すぐ下に表示されている、青い文字をクリック
+(注意、ゆっくりと入力)
+↓
+Save Changesをクリック
+↓
+Advancedのタブをクリック
+↓
+Deauthorize Callback URLの下に
+http://localhost:8080/JissenKadai4/
+★激注意（フェイスブックをクリックして、戻ってくるページ　）
+入力して、すぐ下に表示されている、青い文字をクリック
+(注意、ゆっくりと入力)
+↓
+(変更を保存)save changes
+↓
+更に下の画面に
+Valid OAuth redirect URIsがあるので
+↓http://localhost:8080/JissenKadai4/
+★激注意（フェイスブックをクリックして、戻ってくるページ　）
+入力して、すぐ下に表示されている、青い文字をクリック
+(注意、ゆっくりと入力)
+
+激注意の場所を間違えると動きません！！！
+↓
+(変更を保存)save changes
+↓
+★ここからJAVAのフォルダにどんどん追加していきます（結構大変です)
+フォルダ毎に分けてありますので、Eclipseに追加していってくださいませ。
+DropBoXのフォルダにファイルを作りましたので、コピーで追加してください。
+↓
+1.actionパッケージの中の下に
+①GoFacebookAction.java
+②LoginFacebookAction.java
+ファイルはDropBoxに用意してありますので、追加します。
+（com.internousdev.JissenKadai4.action→ファイル二つ）
+↓
+新しくfacebookのパッケージを作ります。
+例）com.internousdev.facebook
+↓
+①CallbackServlet.java
+②package-info.java
+③SignInServlet.java
+ファイルはDropBoxに用意してありますので、追加します。
+(com.internousdev.facebook→ファイル3つ)
+↓
+★WebContentのWEB-INFの中の
+libフォルダの中にjarファイルを追加します
+↓
+WebContent
+↓
+WEB-INF
+↓
+libフォルダ
+↓
+①facebook4j-core-2.2.2.jar
+②json-simple-1.1.1.jar
+ファイルはDropBoxに用意してありますので、追加します。
+(libに追加する、jarファイル→ファイル2つ）
+↓
+★WebContentの中にimagesフォルダを作ります（もうあれば大丈夫です）
+↓
+imagesフォルダの中にDropBoxから
+①facebook-j.png
+ファイルはDropBoxに用意してありますので、追加します。
+(images→ファイル一つ）
+★struts.xmlのプログラムを追記します
+↓
+テキストはDropBoxに用意してありますので、</action>の下に追記します。
+（struts.xml.txt）
+↓
+★login.jspのプログラムを追記します
+テキストはDropBoxに用意してありますので、追記します。
+(login.jsp.txt)
+<body></body>の中に
+
+★　Facebookからメモをした3つのキーを使います。
+ID　と　App Secret　と　Client Token をコピーして上書きします(人それぞれ違います)
+↓
+Actionの中にある、GoFacebookActionに、APP ID　と　App Secret　と　Client Tokenをコピーして上書きします
+↓　　　　　　　　　　　　　　↓APP ID　     ↓App Secret
+facebook.setOAuthAppId("537629493054879", "8663d0757027170aa79df504ccafdd67");
+String accessTokenString = "537629493054879|50add4e225aafa35275a68b405db7d07";
+↓　　　　　　　　　　　　　　　↑APP ID　　　　↑Client Token
+（注意（｜で句切られているので注意）
+
+★Actionの中にある、LoginFacebookActionに、APP ID　と　App Secretをコピーして上書きします
+　　　　　　　　　　　　　↓APP ID
+final String appId = "537629493054879";　
+final String appSecret = "8663d0757027170aa79df504ccafdd67";
+　　　　　　　　　　　　　　↑App Secret
+
+★com.internousdev.JissenKadai4.facebookの中の
+CallbackServletに、APP ID　と　App Secretをコピーして上書きします
+　　　　　　　　　　　　　↓APP ID
+final String appId = "537629493054879";
+final String appSecret = "8663d0757027170aa79df504ccafdd67";
+　　　　　　　　　　　　　　　↑App Secret
+
+★com.internousdev.JissenKadai4.facebookの中の
+SignInServletに、APP ID　と　App Secret　と　Client Tokenをコピーして上書きします
+　　　　　　　　　　　　　　　　　　↓APP ID　     ↓App Secret　　
+        facebook.setOAuthAppId("537629493054879", "8663d0757027170aa79df504ccafdd67");
+        String accessTokenString ="537629493054879 |50add4e225aafa35275a68b405db7d07";　　　　　　　　　　　　
+　　　　　　　　　　　　　　　　　　　　↑APP ID　　　　↑Client Token
+↓
+エラー処理（パッケージ名の変更等）　
+注意事項
+・struts.xmlの中のツイッター認証を行うアクションのプログラムをactionパッケージ名に変更する。
+・インポートはプラスを広げましょう

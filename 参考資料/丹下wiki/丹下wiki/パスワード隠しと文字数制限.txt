@@ -1,0 +1,55 @@
+皆さんが実践課題で使った「Login.jsp」を具体例に使っていきます。
+
+
+①パスワードを隠す
+パスワード：●●●●
+こんな感じになるようにしていきましょー
+
+<body>
+　　<s:form action="LoginAction">
+	<s:textfield label="ID" name="id" />
+	<s:textfield label="パスワード" name="password" />
+	<s:submit value="確認" />
+　　</s:form>
+</body>
+
+3行目を変えていきま！
+<s:textfield label="パスワード" name="password" />
+ 
+↓
+
+<s:password label="パスワード" name="password" />
+
+textfieldをpasswordに変えるだけです。
+
+
+
+②入力文字数を制限する
+パスワードって大体桁数が決まっていますよね。
+パスワード：●●●●●●●●●●●●●●●●●●●●●●●●●●
+こんなに入力できても意味ないですし、わからなくなりますね
+なので、最大の桁数以上を入力できないようにしましょー
+今回は最大8文字ということにします。
+
+さらに変えていきます
+<s:password label="パスワード" name="password" />
+
+↓
+
+<s:password label="パスワード" name="password" maxlength="8" />
+
+maxlength="8"を後ろにちょっとたすだけ
+
+
+
+ちなみにSタグに限らず、passwordやmaxlengthは使えるタグらしいので
+頭の隅に入れとくといいかもしれません。
+
+
+
+
+
+
+
+
+間違え、修正点がありましたら適宜直しておいてください！

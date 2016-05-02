@@ -1,0 +1,17 @@
+必要なもの
+shizuku.sql…テーブル＋テストデータSQL
+creditcard.sql…クレカモック用SQL
+shizuku.js…Mongo用テストデータ
+
+○shizuku.sqlの入れ方
+コマンドプロンプトでshizuku/sqlフォルダまで移動
+mysql -uroot -pmysql < shizuku.sql
+
+○creditcard.sqlの入れ方
+コマンドプロンプトでMySQLを起動
+creditcard.sqlをエディタで開いて全選択→コピー
+コマンドプロンプトに貼り付け
+
+○shizuku.jsの入れ方
+コマンドプロンプトでshizuku/sqlフォルダまで移動
+mongo < shizuku.js

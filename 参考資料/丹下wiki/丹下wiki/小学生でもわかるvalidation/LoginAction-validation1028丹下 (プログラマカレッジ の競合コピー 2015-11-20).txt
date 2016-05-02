@@ -1,0 +1,95 @@
+validationの使い方-----------------------------------------------------
+クラス名-validation.xmlというファイル名にしないと発動しない
+①struts.xmlのLoginActionのタグに一文追加する
+<action name="LoginAction"
+         class="jp.co.internous.action.LoginAction"
+         method="execute">
+         <result name="success">index.jsp</result>
+         <result name="error">Login.jsp</result>
+         <result name="input">Login.jsp</result><!--←この文を追加する-->
+</action>
+②クラス名-validation.xmlを作成して、同じクラス名のパッケージに追加する。
+例)LoginAction-validation.xmlをactionパッケージに新規作成する
+コードは以下
+
+
+
+
+
+
+LoginAction-validation.xmlのコード-----------------------------------------------------
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- validation.xmlはstruts2のjarファイルの中のインターセプターがvalidationを探している -->
+<!-- LoginAction-validation.xmlと書いてあればActionクラスよりも先に発動する -->
+<!-- コード中には書いてないけどstruts2のjarファイルにあるからvalidationは発動する -->
+
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<!-- ↑validatorを使うときには必ず入れる。validatorについて定義している -->
+<!-- validationの入れ方は2種類あり、xmlを使う方法が楽 -->
+
+
+<validators>
+<!-- validatorsタグで囲む -->
+
+  <!-- 未入力チェック -->
+     <field name="userID">
+     <!-- userIDはlogin.jspのname="userID"で紐付いている。ここは対応するjspファイルのname=""の部分と一緒にする -->
+        <field-validator type="requiredstring">
+        <!-- field-validatorタグでtypeをrequiredstringにする -->
+        <!-- requiredstringはnullでなく長さを持っているかチェックする -->
+        <!-- requiredstringを使うと文字が入力されているかチェックできる -->
+            <message>お名前を入力してください</message>
+            <!-- おそらくxmlはmessageタグで画面に出力する -->
+        </field-validator>
+    </field>
+     <field name="password">
+     <!-- passwordはlogin.jspのname="password"で紐付いている -->
+        <field-validator type="requiredstring">
+        <!-- field-validatorタグでtypeをrequiredstringにする -->
+        <!-- requiredstringはnullでなく長さを持っているかチェックする -->
+        <!-- requiredstringを使うと文字が入力されているかチェックできる -->
+            <message>パスワードを入力してください</message>
+            <!-- messageタグは画面出力 -->
+        </field-validator>
+    </field>
+
+	<!-- ネームチェック -->
+	<field name="userID">
+		<field-validator type="regex">
+		<!-- type="regex"はストリングをフィールドをチェックしている -->
+			<param name="regex">^[0-9a-zA-Z]+</param>
+			<!-- regexは正規表現でパターンを識別する -->
+			<!-- name="regex"をつけて　^[0-9a-zA-Z]+で英数字の入力をチェック -->
+			<!-- メタ文字を使って文字列のパターンを表現できる（スライド参照） -->
+			<!-- ^[]は中の文字以外の文字を除外する -->
+			<!-- [^文字]で中の文字を除外する -->
+			<!-- paramタグが何かわからない -->
+			<!-- paramタグはほかタグにパラメータを与えるために使用される -->
+			<message>半角英数字で入力してください</message>
+			<!-- messageタグは画面出力 -->
+		</field-validator>
+	</field>
+
+	<!-- パスワードチェック -->
+	<field name="password">
+			<field-validator type="regex">
+			<!-- regexは -->
+			<param name="regex">^[0-9a-zA-Z]+</param>
+			<message>半角英数字で入力してください</message>
+		</field-validator>
+	</field>
+
+</validators>
+
+
+わからないこと--------------------------------------------------------------------------------------------
+・正規表現の書き方(メールアドレスの縛りとか、条件式)
+[\\w\\.\\-]+@(?:[\\w\\-]+\\.)+[\\w\\-]+
+\\w　でa～z、A～Z、0～9
+\\.　で.そのものと一致するものをおｋにしてる
+\\-　も同じ
+[]　 で↑のがまるごとおｋにしてる
+
++で@の前の文字が1文字以上ということを示してる
+↑パスワードは4文字以上です。とかにしたいときは[\\w]++++って書いたらいいのかな(丹下)

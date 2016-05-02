@@ -1,0 +1,5 @@
+propertiesファイルはjspファイルごとに作ったほうがいいです。
+ファイル名は jspファイル名_言語コード.properties(言語コード : 英語はen 日本語はja)
+propertiesファイルはstrtus.xmlと同じ場所におく。
+
+struts.xmlに<constant name="struts.custom.i18n.resources" value="main" />を記載。

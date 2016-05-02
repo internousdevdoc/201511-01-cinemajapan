@@ -1,0 +1,23 @@
+struts.xml
+<constant name="struts.custom.i18n.resources" value="プロパティ名">
+例)value="com.internousdev.footprinter.property.header,
+          com.internousdev.footprinter.property.login"
+
+   com.internousdev.footprinter.propertyはパッケージ名なので、struts.xmlと同じ場所にpropertyファイルを置くと、headerだけでおｋ
+
+プロパティファイル
+名前_en.properties(英語)
+名前_ja.properties(日本語)
+enやjaで文字コードを指定しないと読みに行かない。
+
+jsp側
+普通の文章
+<s:text name = "変数名" />
+
+submit等のsタグの中のものを国際化
+<s:submit value="%{getText('変数名')}" />
+
+Java側
+String str = getText("変数名");
+
+Struts タグ　勝手

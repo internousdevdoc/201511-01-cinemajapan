@@ -1,0 +1,191 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>CINEMA JAPAN</title>
+    <link rel="stylesheet" href=css/Kato2.css>
+    <link href="http://netdna.bootstrapcdn">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css"
+rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <a href="top.html" style="color:#ffffff;text-decoration:none"><h1>CINEMA JAPAN</h1></a>
+      <h6>
+      <s:form action="login">
+        <s:textfield label="MAIL" name="email" placeholder="英数字入力" />
+        <s:password label="パスワード" name="password" placeholder="英数字入力" />
+         <s:submit value="ログイン"></s:submit>
+ 		</s:form>
+
+
+      <s:form action="register">
+        <s:submit label="新規登録" type="button" />
+      </s:form>
+        </h6>
+      <br>
+      <div class="follow">
+      <ul style="list-style:none;">
+      <li><a href="#" class="follow-tw">
+      	<i class="fa fa-fw fa-twitter"></i>
+      </a></li>
+      <li><a href="#" class="follow-fb">
+      	<i class="fa fa-fw fa-facebook"></i>
+      </a></li>
+      <li><a href="#" class="follow-gp">
+      	<i class="fa fa-fw fa-google-plus"></i>
+      </a></li>
+      </ul>
+      </div>
+    </header>
+    <form>
+      <div class="box_top">
+        <div class="contents">
+          <div class="list">
+            <h3>人気映画ランキング</h3><br>
+            <div class="movie1">
+              <h8>第１位</h8><br><br>
+              <img class="movie" src ="シンデレラ.jpg">
+              <div class="comment">
+                ディズニーのクラシック・アニメーションの名作としても知られる「シンデレラ」を、ディズニーが新たに実写映画化。
+                母を病気で、父を事故で失ったエラは、父の後妻である継母とその連れ子のドリゼラとアナスタシアに「灰まみれのエラ」を意味する「シンデレラ」と呼ばれ、召使いのように扱われていた。
+                ある日、耐えきれずに家を飛び出したエラは、森の中で城で働いているという青年キットと出会い、心を通わせる。王子である身分を隠していたキットは、
+                城に帰ると父である国王から政略結婚を勧められるが、森で出会ったエラが忘れられず、彼女を探し出すため国中の未婚女性を招いた舞踏会を計画する。
+                イギリス出身の新星リリー・ジェームズがシンデレラに扮し、意地悪な継母をオスカー女優のケイト・ブランシェットが演じた。
+                俳優としても活躍し、監督としては「ハムレット」「恋の骨折り損」「魔笛」などを手がけてきたケネス・ブラナーがメガホンをとった。
+              </div>
+            </div>
+            <div class="movie2">
+              <h8>第２位</h8><br><br>
+              <img class="movie" src ="美女と野獣.jpg">
+              <div class="comment">
+                ディズニーアニメ版でも広く知られるファンタジードラマの名作「美女と野獣」を、1740年に初めて書かれたビルヌーヴ夫人版の物語をもとにフランスで実写映画化。
+                監督は「サイレントヒル」「ジェヴォーダンの獣」のクリストフ・ガンズ。
+                野獣役に「ブラック・スワン」のバンサン・カッセル、ヒロインのベル役は「アデル、ブルーは熱い色」でカンヌ映画祭パルムドールを受賞したレア・セドゥー。
+                バラを盗んだ父の罪を背負い、野獣の城に閉じ込められた美しい娘ベル。
+                しかし、城の主の野獣は毎夜ディナーを共にすること以外、何も強要してこない。
+                やがてベルは野獣の恐ろしい姿の下にある、もうひとつの姿に気付きはじめ、野獣が犯した罪や城で過去に起こった出来事の真実が解き明かされていく。
+              </div>
+            </div>
+            <div class="movie3">
+              <h8>第３位</h8><br><br>
+              <img class="movie" src ="マレフィセント.jpg">
+              <div class="comment">
+                ディズニー・アニメの名作「眠れる森の美女」（1959）を、邪悪な妖精マレフィセントの視点から描き、アニメでは語られなかったマレフィセントとオーロラ姫の間にある隠された物語を明らかにする実写3D映画。
+                アンジェリーナ・ジョリーがマレフィセント、エル・ファニングがマレフィセントに眠りの呪いをかけられるオーロラ姫を演じたほか、ジョリーの娘ビビアンが幼少期のオーロラ姫に扮している。
+                「アバター」「アリス・イン・ワンダーランド」のプロダクションデザインでアカデミー美術賞を受賞したロバート・ストロンバーグがメガホンをとった。
+              </div>
+            </div>
+            <div class="movie4">
+              <h8>第４位</h8><br><br>
+              <img class="movie" src ="アナユキ.jpg">
+              <div class="comment">
+                アンデルセンの「雪の女王」にインスピレーションを得て、運命に引き裂かれた王家の姉妹が、凍てついた世界を救うため冒険を繰り広げる姿を描いた。
+                触れたものを凍らせる秘密の力を持ったエルサは、その力で妹アナを傷つけてしまうことを恐れ、城の部屋に閉じこもって暮らしてきた。
+                やがて成長したエルサは女王の座に就くこととなり、戴冠式のためにひさびさに人々の前に姿を現すが、ふとしたきっかけで力が暴走。
+                王国を真冬の世界に変えてしまう。耐えきらず逃げ出したエルサは雪山の奥で自らの力を存分に解放し、ありのままの自分でいられることに生きる喜びを見出す。
+                一方、アナは姉と王国を救うため、山男のクリストフとその相棒のトナカイのスヴェン、夏にあこがれる雪だるまのオラフとともに、雪山の奥へと旅に出る。
+                監督は「ターザン」「サーフズ・アップ」のクリス・バックと、「シュガー・ラッシュ」の脚本を手がけたジェニファー・リー。
+                ピクサー作品を除いたディズニーアニメとして、アカデミー長編アニメーション賞を受賞したのは本作が初となる。
+              </div>
+            </div>
+
+            <h3>今月のおすすめ作品</h3><br>
+            <div class="movie5">
+              <img class="movie" src ="ライオンキング.jpg">
+              <div class="comment">
+                ディズニーのクラシック・アニメーションの名作としても知られる「シンデレラ」を、ディズニーが新たに実写映画化。
+                母を病気で、父を事故で失ったエラは、父の後妻である継母とその連れ子のドリゼラとアナスタシアに「灰まみれのエラ」を意味する「シンデレラ」と呼ばれ、召使いのように扱われていた。
+                ある日、耐えきれずに家を飛び出したエラは、森の中で城で働いているという青年キットと出会い、心を通わせる。王子である身分を隠していたキットは、
+                城に帰ると父である国王から政略結婚を勧められるが、森で出会ったエラが忘れられず、彼女を探し出すため国中の未婚女性を招いた舞踏会を計画する。
+                イギリス出身の新星リリー・ジェームズがシンデレラに扮し、意地悪な継母をオスカー女優のケイト・ブランシェットが演じた。
+                俳優としても活躍し、監督としては「ハムレット」「恋の骨折り損」「魔笛」などを手がけてきたケネス・ブラナーがメガホンをとった。
+              </div>
+            </div>
+            <div class="movie6">
+              <img class="movie" src ="パイレーツ・オブ・カリビアン　デッドマンズ・チェスト.jpg">
+              <div class="comment">
+                ディズニーアニメ版でも広く知られるファンタジードラマの名作「美女と野獣」を、1740年に初めて書かれたビルヌーヴ夫人版の物語をもとにフランスで実写映画化。
+                監督は「サイレントヒル」「ジェヴォーダンの獣」のクリストフ・ガンズ。
+                野獣役に「ブラック・スワン」のバンサン・カッセル、ヒロインのベル役は「アデル、ブルーは熱い色」でカンヌ映画祭パルムドールを受賞したレア・セドゥー。
+                バラを盗んだ父の罪を背負い、野獣の城に閉じ込められた美しい娘ベル。
+                しかし、城の主の野獣は毎夜ディナーを共にすること以外、何も強要してこない。
+                やがてベルは野獣の恐ろしい姿の下にある、もうひとつの姿に気付きはじめ、野獣が犯した罪や城で過去に起こった出来事の真実が解き明かされていく。
+              </div>
+            </div>
+            <div class="movie7">
+              <img class="movie" src ="イレーツ・オブ・カリビアン　ワールド・エンド.jpg">
+              <div class="comment">
+                ディズニー・アニメの名作「眠れる森の美女」（1959）を、邪悪な妖精マレフィセントの視点から描き、アニメでは語られなかったマレフィセントとオーロラ姫の間にある隠された物語を明らかにする実写3D映画。
+                アンジェリーナ・ジョリーがマレフィセント、エル・ファニングがマレフィセントに眠りの呪いをかけられるオーロラ姫を演じたほか、ジョリーの娘ビビアンが幼少期のオーロラ姫に扮している。
+                「アバター」「アリス・イン・ワンダーランド」のプロダクションデザインでアカデミー美術賞を受賞したロバート・ストロンバーグがメガホンをとった。
+              </div>
+            </div>
+            <div class="movie8">
+              <img class="movie" src ="ミッション：インポッシブル　ローグ・ネイション.jpg">
+              <div class="comment">
+                アンデルセンの「雪の女王」にインスピレーションを得て、運命に引き裂かれた王家の姉妹が、凍てついた世界を救うため冒険を繰り広げる姿を描いた。
+                触れたものを凍らせる秘密の力を持ったエルサは、その力で妹アナを傷つけてしまうことを恐れ、城の部屋に閉じこもって暮らしてきた。
+                やがて成長したエルサは女王の座に就くこととなり、戴冠式のためにひさびさに人々の前に姿を現すが、ふとしたきっかけで力が暴走。
+                王国を真冬の世界に変えてしまう。耐えきらず逃げ出したエルサは雪山の奥で自らの力を存分に解放し、ありのままの自分でいられることに生きる喜びを見出す。
+                一方、アナは姉と王国を救うため、山男のクリストフとその相棒のトナカイのスヴェン、夏にあこがれる雪だるまのオラフとともに、雪山の奥へと旅に出る。
+                監督は「ターザン」「サーフズ・アップ」のクリス・バックと、「シュガー・ラッシュ」の脚本を手がけたジェニファー・リー。
+                ピクサー作品を除いたディズニーアニメとして、アカデミー長編アニメーション賞を受賞したのは本作が初となる。
+              </div>
+            </div>
+          </div>
+        </div>
+        <sideber>
+          <div class="map">
+            <div class="cinema1">
+              <h3>TOHO CINEMAS</h3><br>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6479.829208480675!2d139.767111!3d35.703719!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c18b7811e9f%3A0x795eee1c1c4fa30d!2z5pel5pysLCDjgJIxMTMtMDAzNCDmnbHkuqzpg73mlofkuqzljLrmua_ls7bvvJPkuIHnm67vvJLiiJLvvJHvvJI!5e0!3m2!1sja!2sus!4v1449043482993" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            <div class="cinema2">
+              <h3>109 CINEMAS</h3><br>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6479.829208480675!2d139.767111!3d35.703719!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c18b7811e9f%3A0x795eee1c1c4fa30d!2z5pel5pysLCDjgJIxMTMtMDAzNCDmnbHkuqzpg73mlofkuqzljLrmua_ls7bvvJPkuIHnm67vvJLiiJLvvJHvvJI!5e0!3m2!1sja!2sus!4v1449043482993" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            <div class="cinema3">
+              <h3>UNITED CINEMAS</h3><br>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6479.829208480675!2d139.767111!3d35.703719!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c18b7811e9f%3A0x795eee1c1c4fa30d!2z5pel5pysLCDjgJIxMTMtMDAzNCDmnbHkuqzpg73mlofkuqzljLrmua_ls7bvvJPkuIHnm67vvJLiiJLvvJHvvJI!5e0!3m2!1sja!2sus!4v1449043482993" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+              <div class="cinema4">
+                <h3>AEON CINEMAS</h3><br>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6479.829208480675!2d139.767111!3d35.703719!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c18b7811e9f%3A0x795eee1c1c4fa30d!2z5pel5pysLCDjgJIxMTMtMDAzNCDmnbHkuqzpg73mlofkuqzljLrmua_ls7bvvJPkuIHnm67vvJLiiJLvvJHvvJI!5e0!3m2!1sja!2sus!4v1449043482993" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </sideber>
+        </div>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+      <footer>
+        <small>Copyright © CINEMA JAPAN、all rights reserved.</small>
+      </footer>
+
+  </form>
+  </body>
+</html>

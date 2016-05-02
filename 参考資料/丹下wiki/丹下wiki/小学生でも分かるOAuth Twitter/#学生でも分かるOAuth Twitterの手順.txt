@@ -1,0 +1,141 @@
+☆Twitterに認証をさせます。
+ツイッター
+https://twitter.com/?lang=ja
+にログイン
+
+インターノウスのメールアドレスになります↓
+internous.dev@gmail.com
+以下、手順になります。
+
+1.ツイッターに、ログインします。
+ID(internousdev) PASS(internous01）
+
+2.https://apps.twitter.com/
+にアクセスし右上のCreate New Appを押します。
+
+3.name(名前)→（internous.10.b）←すでに作っております、新しく作成しても良いです。
+（グループ名を記入しました）
+　Description（説明）10文字を入れないと怒られますので（zyuugatuseinotestdesu）
+↑10文字以上なら何でもいいです。
+（10月生のテストです）
+　Website　　（http://www.internousdev.com/）（インターノウスにしてください）
+　Callback URL　（http://www.internousdev.com/K_Home/LoginTwitterAction）
+（ログインツイッターアクションのホームに戻るように設定しました）
+4.Access levlelはRead and writeになっているので、
+隣の文字のmodify app permissions)をクリック
+read onlyにします。
+https://apps.twitter.com/app/9009456/show
+
+5.
+keys and Access Tokensのタブを開きます
+Consumer KeyとConsumer Secretが発行されますので
+↓人それぞれ違います、どこかに保存か覚えておいてください。
+6.Consumer Key (API Key)	
+EQ3bPD0R9WsMcEFquWOGGT0e1
+↑人それぞれ違います
+7.Consumer Secret (API Secret)	
+RNfYtYqKcPOTwhHctAmtzjG1JbnljQRAcK86wvZX9Y0vqQyAa9
+↑人それぞれ違います
+
+☆ここからJAVAのフォルダにどんどん追加していきます（結構大変です)
+フォルダ毎に分けてありますので、Eclipseに追加していってくださいませ。
+DropBoXのフォルダにファイルを作りましたので、コピーで追加してください。
+
+8.internousdev.acitionのパッケージの中（src）の下にDropBoxから
+GoTwitterAction.javaをコピー。
+（ファイルは別に用意しております。）
+
+9.internousdev.acitionのパッケージの中（src）の下にDropBoxから
+LoginTwitterAction.javaをコピー。
+（ファイルは別に用意しております。）
+
+10.internousdev.daoのパッケージの中（src）の下にDropBoxから
+LoginUserDAO.javaをコピー。
+（ファイルは別に用意しております。）
+
+☆internousdev.dtoのパッケージを新しく作成します
+パッケージの中（src）の下にDropBoxから
+LoginUserDTO.javaをコピー。
+（ファイルは別に用意しております。）
+
+☆internousdev.Torken.Twitterのパッケージを新しく作ります。（DtoやDaoみたいに）
+
+12.internousdev.Torken.Twitterの下にDropBoxから
+package-info.javaをコピー。
+（ファイルは別に用意しております。）
+
+13.internousdev.Torken.Twitterの下にDropBoxから
+TwitterAccessToken.javaをコピー。
+（ファイルは別に用意しております。）
+
+14.internousdev.Torken.Twitterの下にDropBoxから
+TwitterRequestToken.javaをコピー。
+（ファイルは別に用意しております。）
+
+15.WEB-INFのlibフォルダのTwitterの下にDropBoxから
+jarファイルをコピー。(Twitterのjarファイル)
+①twitter4j-async-4.0.3
+②twitter4j-core-4.0.3
+③twitter4j-examples-4.0.3
+④twitter4j-media-support-4.0.3
+⑤twitter4j-stream-4.0.3
+（ファイルは別に用意しております。）
+
+☆WebContentの中にcssフォルダを作ります
+cssフォルダの中にDropBoxから
+16.oath.cssをコピー。
+（ファイルは別に用意しております。）
+
+☆WebContentの中にimagesフォルダを作ります
+imagesフォルダの中にDropBoxから
+17.twitter-j.pngをコピー。
+（ファイルは別に用意しております。）
+
+
+↓ここ注意！
+☆WEB-INFの中にhiddenフォルダを作ります
+hiddenフォルダの中にDropBoxから
+18.LoginUser.jspファイルをコピー。
+（ファイルは別に用意しております。）
+
+
+☆ここからプログラムを追記のコピペします
+
+19.struts.xmlの中のプログラムが書いてあるところに
+DropBoxにあるテキストのstruts.jspをコピーして、
+actionの下に追記コピペします
+（ファイルは別に用意しております。）
+
+20.Login.jspのプログラムが書いてあるところに
+DropBoxにあるテキストのLogin.jspに追記でコピペ
+<body></body>の中に
+
+21．struts.xmlの中のツイッター認証を行うアクションのプログラムを
+actionパッケージ名に変更する。
+
+☆最後にツイッターで発行したトークンの番号を書き換えします
+internousdev.Torken.Twitterの中の
+TwitterRequestTokenのプログラムが書いてあるところに。
+5でツイッター側で発行した
+
+Consumer Key をコピペ↓　　　　ここ
+　　　　　　　　　　　　　　　　↓　
+final String CONSUMER_KEY = "EQ3bPD0R9WsMcEFquWOGGT0e1";
+　
+　　　　　　　　　　　　　　　　　
+Consumer Secret　をコピペ↓　　　　　ここ
+　　　　　　　　　　　　　　　　　↓
+final String CONSUMER_SECRET = "RNfYtYqKcPOTwhHctAmtzjG1JbnljQRAcK86wvZX9Y0vqQyAa9";
+
+エラーを処理　インポート、またはパッケージ名に合わせて終了。
+
+
+
+注意事項
+・LoginTwitterActionをactionパッケージに入れていなかったのでログイン画面が
+表示されなかった
+・logging.jarを入れないといけない
+・imagesの名前を間違えた
+hiddenフォルダをWEB-INFの中に入れてないといけない
+・struts.xmlの中のツイッター認証を行うアクションのプログラムをactionパッケージ名に変更する。
+・インポートはプラスを広げましょう

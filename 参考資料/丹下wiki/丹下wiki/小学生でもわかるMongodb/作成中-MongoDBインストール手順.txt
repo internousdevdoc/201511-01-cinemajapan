@@ -1,0 +1,178 @@
+MongoDBインストールの概要----------------------------------------------
+
+MongoDBを使用するにはMySQLと同じように、MongoDBをインストール
+し、環境変数を設定してから、コマンドプロンプト上で起動します。
+
+
+
+MongoDBの環境構築手順---------------------------------------------
+
+① MongoDBをダウンロードする
+https://www.mongodb.org/downloads#production
+上のURLにアクセスする
+Download MongoDB
+VERSIONが一番上のwindows 64-bit 2008 R2+を選択
+BINARYの緑のダウンロードボタンを押すDOWNLOAD(msi)
+
+②インストールする
+mongodb-win32-x86_64-2008plus-ssl-3.0.7-signed.msi
+を実行する
+インストーラーが起動する
+Next→I accept the terms in the License Agreementにチェックを入れる
+Completeをクリック
+Installをクリック→インストールが終わったらFinishをクリック
+
+③binにPathを設定する
+ローカルディスクCのProgram FilesにMongoDBというフォルダができている
+MongoDB>Server>3.0>binを開いていく
+アドレスバーの右空白をクリックしてアドレスバーの
+C:\Program Files\MongoDB\Server\3.0\binをコピーする
+
+コンピュータ＞システムのプロパティ＞システムの詳細設定＞環境変数
+PathにコピーしたC:\Program Files\MongoDB\Server\3.0\binを追記
+(セミコロン;を先頭につけるのを忘れないこと)
+
+コマンドプロンプトを立ち上げ
+cd C:\Program Files\MongoDB\Server\3.0\bin
+と入力する
+その後
+mongo --version
+と入力する
+うまくいけば
+MongoDB shell version:3.0.7と表示される
+表示されたら正常にインストールされている
+
+
+④ローカルディスクC:直下にフォルダを作成する
+コマンドプロンプトを立ち上げて
+mkdir C:\mongodb\data C:\mongodb\logs
+と、入力して実行
+(処理内容　C:直下にmondodbというフォルダを作成してその中にさらに
+dataとlogsというフォルダを作っている)
+うまくいけばローカルディスクCの中にmongodbというフォルダができていて
+その中にdata logsの2つァイルができている
+
+⑥ mongodbを起動
+コマンドプロンプト上で↓
+mongod --dbpath c:\mongodb\data --logpath c:\mongodb\logs\mongodb.log
+と入力する
+うまくいくと何も表示されずそこでとまる(エラーではないので大丈夫)
+
+⑦mongodbを起動(2枚目)
+今のコマンドプロンプトをそのまま残したまま、
+新規でコマンドプロンプトを起動する
+mongo
+と入力する
+うまくいけばconnecting to: testと最後の行に表示される
+dbと入力してエンター押す
+testと表示されれば正常に接続できています
+
+これでMongoDBの環境構築は完了です
+以後、接続する際は⑥，⑦の手順からスタートします
+
+------------------------------------------------------------
+この部分はまだ完成していません
+⑦ 別のコマンドプロンプトからmongoシェルを扱う
+
+http://qiita.com/yoh-nak/items/f0c429f10347ae7ec98b
+
+http://www.atmarkit.co.jp/ait/articles/1507/14/news
+
+MongoDBの基本コマンド-------------------------------------------------------
+コマンドプロンプト(1枚目)mongod --dbpath c:\mongodb\data --logpath c:\mongodb\logs\mongodb.log
+コマンドプロンプト(2枚目)mongo
+→起動時に mongo データベース名
+で起動すると最初から指定したデータベースを操作できる
+指定しない場合はtestというデータベースが用意されている
+以後、2枚目で操作する
+
+○データベースを作成する
+use データベース名
+例) use test
+
+○データベース削除
+db.dropDatabase();
+
+○データベース一覧表示
+show dbs
+
+○コレクション(MySQLで言うところのテーブルにあたるもの)の一覧表示
+show collections
+
+○コレクション作成
+db.createCollection('コレクション名');
+例) db.createCollection('COL');
+
+○コレクションの削除
+db.コレクション名.drop();
+例) db.COL.drop();
+
+○コレクションにドキュメント(MySQLで言うとテーブルの中身にあたるもの)
+db.コレクション名.insert({カラム名1:'データ1',カラム名2:'データ2'});
+例) db.COL.insert({id:'100',name:'tanaka'});
+
+詳しいコマンドについてはコマンド一覧.txtを参照
+
+JDBCドライバの取得(NoSQL用) - データベース接続-------------------------------
+下記URLにアクセス
+http://mvnrepository.com/artifact/org.mongodb/mongo-java-driver
+2.13.xのversion2.13.3をクリック
+ArtifactのDownload(JAR)をクリック
+ダウンロードが開始
+ダウンロードできたらjarファイルをc:program files>java>jdk>libに入れる
+
+Eclipseを起動してビルドパスを設定して完了
+
+
+Eclipseのコンソール上でデータベースを作成するコード-----------------------
+
+package mongodb;
+//各々のパッケージ名に変更してください
+
+import java.net.UnknownHostException;
+import java.util.Set;
+
+import com.mongodb.DB;
+import com.mongodb.MongoClient;
+//java.netクラスのUnknownHostExceptionをインポートしています
+public class MongoDBConnector {
+	//クラス名はファイル名と一致させる
+
+	public static void main(String[] args) throws UnknownHostException {
+		//↑ここでインポートしたUnknownHostExceptionを使っている
+		DB db = null;
+
+		//DBクラスの変数dbを空にした
+		MongoClient mongo = new MongoClient("localhost", 27017);
+		//MongoClientクラスをインスタンス化し、引数localhostと27017を入れる
+		//この引数は変更しない
+
+		db = mongo.getDB("local");
+		//getDB()メソッド:引数にデータベース名を入れるとコマンドプロンプト上でuse databaseしたと同じ状態になる
+		//localというデータベースを作成した
+		//すでに引数に入れたデータベースが存在する場合はそれをuseした状態になる
+
+		Set<String> colls = db.getCollectionNames();
+		//getCollectionNames()メソッドでdb(getDB()メソッドで指定したデータベースの中にあるコレクションすべて)を
+		//collsという変数にSet<String>でString型格納している。
+
+		for (String s : colls) {
+			//for文繰り返し:さきほどcollsに格納したコレクションがある限り
+			System.out.println(s);
+			//コレクションの名前を画面に出力します
+		}
+
+	}
+}
+
+
+↑のコードの実行画面----------------------------------------------------------------------------
+注意:コマンドプロンプトを2枚起動してmongoDBに接続した状態で
+ファイルを実行しないとエラーが出てしまいます
+
+startup_log
+system.indexes
+
+とデフォルトでは表示されます。
+
+
